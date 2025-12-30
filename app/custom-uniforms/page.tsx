@@ -4,11 +4,12 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Check, Zap } from "lucide-react"
+import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 export const metadata = {
   title: "Custom Uniforms & Logo Stitching | Tinks",
   description:
-    "Custom uniforms with logo embroidery and printing. Tailored stitching for schools, corporates, hospitals and more across Tamil Nadu.",
+    "Custom uniforms with logo embroidery and printing. Tailored stitching for schools, corporates, hospitals and more across India.",
 }
 
 export default function CustomUniformsPage() {
@@ -122,7 +123,7 @@ export default function CustomUniformsPage() {
               {
                 title: "Fast Turnaround",
                 description:
-                  "Quick production and delivery across Tamil Nadu. Timeline depends on order complexity and quantity.",
+                  "Quick production and delivery across India. Timeline depends on order complexity and quantity.",
               },
             ].map((service, index) => (
               <div key={index} className="bg-card rounded-lg p-6 border border-border">
@@ -180,7 +181,7 @@ export default function CustomUniformsPage() {
                 {
                   step: 6,
                   title: "Delivery",
-                  description: "Fast delivery across Tamil Nadu. We handle packaging and logistics.",
+                  description: "Fast delivery across India. We handle packaging and logistics.",
                 },
               ].map((item, index) => (
                 <div key={item.step} className="relative flex gap-6">
@@ -253,9 +254,11 @@ export default function CustomUniformsPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base font-semibold">
-              Request Custom Quote
-            </Button>
+            <a href={getWhatsAppLink(whatsappMessages.customUniforms)} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base font-semibold">
+                Request Custom Quote
+              </Button>
+            </a>
             <Link href="/contact">
               <Button variant="outline" className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-transparent">
                 Contact Us

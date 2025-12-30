@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
 import { sportsJerseyData } from "@/lib/collections-data"
 import Link from "next/link"
-
+import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 export const metadata = {
-  title: "Sports & Jersey Wear | Tinks",
+  title: "Sports & Jersey Wears | Tinks",
   description: "Custom sports uniforms and jersey wear for teams and sports organizations.",
 }
 
@@ -17,7 +17,7 @@ export default function SportsJerseyWearPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="bg-primary text-primary-foreground py-12 lg:py-16">
+      <section className="bg-primary text-primary-foreground py-12 lg:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-balance">{sportsJerseyData.name}</h1>
           <p className="text-lg text-primary-foreground/80 text-balance max-w-3xl">{sportsJerseyData.intro}</p>
@@ -53,7 +53,7 @@ export default function SportsJerseyWearPage() {
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base font-semibold"
           >
-            <Link href="/contact">Get Your Quote</Link>
+            <Link href={getWhatsAppLink(sportsJerseyData.whatsapp_message)}>Start a Discussion</Link>
           </Button>
         </div>
       </section>

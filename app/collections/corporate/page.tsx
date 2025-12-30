@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button"
 import { CategoryCard } from "@/components/category-card"
 import { corporateWearData } from "@/lib/collections-data"
 import Link from "next/link"
+import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
-  title: "Corporate Wear | Tinks",
+  title: "Corporate Wears | Tinks",
   description: "Professional corporate uniforms and work wear.",
 }
 
@@ -17,7 +18,7 @@ export default function CorporateWearPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="bg-primary text-primary-foreground py-12 lg:py-16">
+      <section className="bg-primary text-primary-foreground py-12 lg:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-balance">{corporateWearData.name}</h1>
           <p className="text-lg text-primary-foreground/80 text-balance max-w-3xl">{corporateWearData.intro}</p>
@@ -53,7 +54,7 @@ export default function CorporateWearPage() {
             asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base font-semibold"
           >
-            <Link href="/contact">Start a Conversation with TINKS</Link>
+            <Link href={getWhatsAppLink(corporateWearData.whatsapp_message)}>Start a Conversation with TINKS</Link>
           </Button>
         </div>
       </section>

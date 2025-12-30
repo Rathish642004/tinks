@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 import type { ProductDetails, ProductColor, ProductSize } from "@/lib/collections-data"
+import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 interface ProductDetailModalProps {
   isOpen: boolean
@@ -30,13 +31,13 @@ export function ProductDetailModal({
 }: ProductDetailModalProps) {
   const [selectedColor, setSelectedColor] = useState<ProductColor | undefined>()
   const [selectedSize, setSelectedSize] = useState<ProductSize | undefined>()
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(10)
 
   useEffect(() => {
     if (details && isOpen) {
       setSelectedColor(details.colors?.[0])
       setSelectedSize(details.sizes?.[0])
-      setQuantity(1)
+      setQuantity(10)
     }
   }, [details, isOpen])
 
@@ -130,14 +131,14 @@ export function ProductDetailModal({
               <label className="block text-sm font-semibold text-gray-900 mb-3">Quantity</label>
               <div className="flex items-center gap-4 w-fit">
                 <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  onClick={() => setQuantity(Math.max(10, quantity - 10))}
                   className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
                 >
                   −
                 </button>
                 <span className="text-xl font-semibold text-navy-900 w-8 text-center">{quantity}</span>
                 <button
-                  onClick={() => setQuantity(quantity + 1)}
+                  onClick={() => setQuantity(quantity + 10)}
                   className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
                 >
                   +
@@ -163,8 +164,8 @@ export function ProductDetailModal({
                 variant="outline"
                 className="flex-1 border-navy-900 text-navy-900 hover:bg-navy-50 font-semibold py-3 bg-transparent"
                 onClick={() => {
-                  const message = `Hi, I'm interested in ${title} in ${selectedColor?.name} color and ${selectedSize?.size} size. Quantity: ${quantity}. Please provide more information.`
-                  window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, "_blank")
+                  const message = whatsappMessages.product(title, selectedColor?.name, selectedSize?.size, quantity)
+                  window.open(getWhatsAppLink(message), "_blank")
                 }}
               >
                 WhatsApp Order

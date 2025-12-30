@@ -8,6 +8,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ChevronLeft, MessageCircle } from "lucide-react"
 import { allCollections } from "@/lib/collections-data"
+import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 interface ProductDetailPageProps {
   params: Promise<{
@@ -20,7 +21,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const { category, id } = use(params)
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
   const [selectedSize, setSelectedSize] = useState<string | null>(null)
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(10)
 
   // Find the collection and product
   const collection = allCollections.find((c) => c.id === category)
@@ -31,7 +32,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-primary mb-4">Product Not Found</h1>
-          <Link href="/collections">
+          <Link href="/#uniform-solutions">
             <Button>Go Back</Button>
           </Link>
         </div>
@@ -141,7 +142,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 <h3 className="font-semibold text-foreground mb-3">Quantity</h3>
                 <div className="flex items-center gap-4">
                   <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    onClick={() => setQuantity(Math.max(10, quantity - 10))}
                     className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:bg-secondary transition"
                   >
                     −
@@ -154,7 +155,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                     min="1"
                   />
                   <button
-                    onClick={() => setQuantity(quantity + 1)}
+                    onClick={() => setQuantity(quantity + 10)}
                     className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:bg-secondary transition"
                   >
                     +
@@ -170,13 +171,23 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="flex-1">
+                <Link
+                  href={{
+                    pathname: "/contact",
+                    query: {
+                      collections: collection.name,
+                      category: product.title,
+                      quantity: quantity.toString(),
+                    },
+                  }}
+                  className="flex-1"
+                >
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 text-base font-semibold">
                     Request Quote
                   </Button>
                 </Link>
                 <a
-                  href="https://wa.me/919876543210?text=Hi! I'm interested in this product."
+                  href={getWhatsAppLink(whatsappMessages.product(product.title, selectedColor || undefined, selectedSize || undefined, quantity))}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1"

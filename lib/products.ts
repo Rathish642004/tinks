@@ -38,7 +38,7 @@ export const products: Product[] = [
     name: "Medical Scrubs Set",
     category: "Medical",
     price: 999,
-    image: "/medical-scrubs-nurse-uniform.jpg",
+    image: "/industrial-safety-coverall-uniform.jpg",
     colors: ["White", "Light Blue", "Green", "Navy"],
     sizes: ["XS", "S", "M", "L", "XL", "XXL"],
     description: "Comfortable and breathable medical scrubs for healthcare professionals with stain-resistant fabric.",

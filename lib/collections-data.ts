@@ -14,6 +14,7 @@ export interface Collection {
   categories: CollectionCategory[]
   final_cta_text: string
   final_cta_subtext: string
+  whatsapp_message: string
 }
 
 export interface ProductColor {
@@ -56,34 +57,32 @@ export const schoolUniformsData: Collection = {
   id: "school",
   name: "School Uniforms",
   intro:
-    "TINKS provides high-quality school house uniforms designed for comfort, fit, and durability. We manufacture house T-shirts, track pants, and activewear uniforms for boys, girls, and kindergarten students. Our uniforms are made using breathable, skin-friendly fabrics suitable for daily school activities and events. Schools trust TINKS for consistent quality, accurate sizing, and reliable bulk delivery of house uniforms.",
+    "TINKS designs and supplies school house uniforms for daily school activities and events. Our range includes house T-shirts, track pants, and activewear uniforms for boys, girls, and kindergarten students. Built for regular use, these uniforms support consistent sizing, practical design, and dependable bulk supply for schools.",
   categories: [
     {
       id: "boys-uniform",
       title: "Boys Uniform Set",
       description: "Comfortable house uniforms with durable stitching for daily school use.",
       image: "/school-uniform-shirt-pant-set.jpg",
-      cta_text: "Enquire Now",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/school/${"boys-uniform"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
-          { name: "Maroon", hex: "#800000" },
+          { name: "Red", hex: "#ff0000" },
+          { name: "Blue", hex: "#0000ff" },
+          { name: "Yellow", hex: "#ffff00" },
+          {name: "Green", hex: "#008000" }
         ],
         sizes: [
-          { size: "XS", available: true },
-          { size: "S", available: true },
-          { size: "M", available: true },
-          { size: "L", available: true },
-          { size: "XL", available: true },
-          { size: "XXL", available: true },
+          { size: "1-5 std", available: true },
+          { size: "6-8 std", available: true },
+          { size: "9-12 std", available: true }
         ],
-        startingPrice: "₹599",
+        startingPrice: "₹499",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Quality Fabric", description: "Premium material" },
@@ -95,27 +94,25 @@ export const schoolUniformsData: Collection = {
       title: "Girls Uniform Set",
       description: "Well-fitted house uniforms designed for comfort and movement.",
       image: "/school-uniform-shirt-pant-set.jpg",
-      cta_text: "Enquire Now",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/school/${"girls-uniform"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
-          { name: "Maroon", hex: "#800000" },
+          { name: "Red", hex: "#ff0000" },
+          { name: "Blue", hex: "#0000ff" },
+          { name: "Yellow", hex: "#ffff00" },
+          {name: "Green", hex: "#008000" }
         ],
         sizes: [
-          { size: "XS", available: true },
-          { size: "S", available: true },
-          { size: "M", available: true },
-          { size: "L", available: true },
-          { size: "XL", available: true },
-          { size: "XXL", available: true },
+          { size: "1-5 std", available: true },
+          { size: "6-8 std", available: true },
+          { size: "9-12 std", available: true }
         ],
-        startingPrice: "₹649",
+        startingPrice: "₹499",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Quality Fabric", description: "Premium material" },
@@ -127,13 +124,14 @@ export const schoolUniformsData: Collection = {
       title: "Kindergarten Uniform Set",
       description: "Soft, safe house uniforms suitable for young children.",
       image: "/school-uniform-shirt-pant-set.jpg",
-      cta_text: "Enquire Now",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/school/${"kindergarten-uniform"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
-          { name: "Pink", hex: "#ff69b4" },
+          { name: "Red", hex: "#ff0000" },
+          { name: "Blue", hex: "#0000ff" },
+          { name: "Yellow", hex: "#ffff00" },
+          {name: "Green", hex: "#008000" }
         ],
         sizes: [
           { size: "2Y", available: true },
@@ -142,11 +140,11 @@ export const schoolUniformsData: Collection = {
           { size: "5Y", available: true },
           { size: "6Y", available: true },
         ],
-        startingPrice: "₹449",
+        startingPrice: "₹349",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Quality Fabric", description: "Safe & soft" },
@@ -156,41 +154,41 @@ export const schoolUniformsData: Collection = {
   ],
   final_cta_text: "Let's discuss your uniform requirements",
   final_cta_subtext: "Start a Discussion",
+  whatsapp_message: "Hello, I would like to inquire about school uniforms.",
 }
 
 export const corporateWearData: Collection = {
   id: "corporate",
-  name: "Corporate Wear",
+  name: "Corporate Wears",
   intro:
-    "Professional uniforms that strengthen your brand identity. TINKS offers a range of corporate wear options from everyday comfort polos to premium soft fabrics. Each fabric is selected for durability, comfort, and professional appearance suitable for office environments.",
+    "At TINKS, our polo t-shirts are designed for everyday wear as part of professional corporate uniforms. Crafted from carefully selected fabrics, they provide lasting comfort for both men and women during long working hours. Each polo retains its shape after repeated washes while maintaining a clean, polished brand appearance.",
   categories: [
     {
       id: "everyday-comfort",
       title: "Everyday Comfort Polo",
-      description: "100% Cotton - Soft, breathable, and perfect for daily wear.",
+      description: "100% Cotton - Soft, breathable cotton designed for all-day comfort and regular use.",
       image: "/corporate-formal-shirt.jpg",
-      cta_text: "Get Quote",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/corporate/${"everyday-comfort"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
-          { name: "Orange", hex: "#ff7f00" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹549",
+        startingPrice: "₹399",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "100% Cotton", description: "Breathable & soft" },
@@ -200,30 +198,29 @@ export const corporateWearData: Collection = {
     {
       id: "easycare-polo",
       title: "EasyCare Work Polo",
-      description: "60% Cotton / 40% Polyester - Easy to maintain and wrinkle-resistant.",
+      description: "60% Cotton / 40% Polyester - Durable blend that’s easy to wash, quick to dry, and perfect for daily workwear.",
       image: "/corporate-formal-shirt.jpg",
-      cta_text: "Get Quote",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/corporate/${"easycare-polo"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
-          { name: "Orange", hex: "#ff7f00" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹449",
+        startingPrice: "₹349",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Wrinkle Resistant", description: "Easy care fabric" },
@@ -233,30 +230,29 @@ export const corporateWearData: Collection = {
     {
       id: "stretchfit-polo",
       title: "StretchFit Polo",
-      description: "95% Cotton / 5% Lycra - Maximum comfort with flexibility for movement.",
+      description: "95% Cotton / 5% Lycra - Flexible fabric with a comfortable stretch for a better fit and easy movement.",
       image: "/corporate-formal-shirt.jpg",
-      cta_text: "Get Quote",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/corporate/${"stretchfit-polo"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
-          { name: "Orange", hex: "#ff7f00" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹599",
+        startingPrice: "₹339",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "With Lycra", description: "Flexible & comfortable" },
@@ -266,30 +262,29 @@ export const corporateWearData: Collection = {
     {
       id: "premium-soft-polo",
       title: "Premium Soft Polo",
-      description: "100% Bio-Washed Cotton - Luxuriously soft with a premium feel.",
+      description: "100% Bio-Washed Cotton - Smooth, premium-finish cotton that feels softer and looks refined all day..",
       image: "/corporate-formal-shirt.jpg",
-      cta_text: "Get Quote",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/corporate/${"premium-soft-polo"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
-          { name: "Orange", hex: "#ff7f00" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹699",
+        startingPrice: "₹399",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Bio-Washed Cotton", description: "Premium feel" },
@@ -300,40 +295,41 @@ export const corporateWearData: Collection = {
   final_cta_text: "Looking to choose the right polo fabric for your institution or team?",
   final_cta_subtext:
     "Let's discuss your usage, quantity, and customization needs — we'll help you find the best fit for your requirement.",
+  whatsapp_message: "Hello, I would like to inquire about corporate wear uniforms.",
 }
 
 export const retailStaffWearData: Collection = {
   id: "retail",
-  name: "Retail & Staff Wear",
+  name: "Retail & Staff Wears",
   intro:
-    "Polished staff uniforms for confident customer interactions. TINKS offers retail and staff wear solutions designed for hospitality and retail environments. Our uniforms combine professionalism with comfort for all-day wear.",
+    "TINKS Retail & Staff Wear helps brands maintain a neat, professional appearance through well-designed staff uniforms. Built for long working hours, frequent washing, and daily customer interaction, our garments support team comfort and brand consistency. From retail outlets to showrooms and service counters, we design practical shop uniforms suited to real work environments.",
   categories: [
     {
       id: "workcomfort-polo",
       title: "WorkComfort Polo",
       description: "Professional polo perfect for retail and hospitality staff.",
       image: "/hotel-reception-uniform-dress.jpg",
-      cta_text: "Connect",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/retail/${"workcomfort-polo"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹499",
+        startingPrice: "₹249",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Professional Look", description: "Quality material" },
@@ -345,27 +341,26 @@ export const retailStaffWearData: Collection = {
       title: "AirFlow Knit T-Shirt",
       description: "Breathable knit fabric ideal for high-activity retail environments.",
       image: "/hotel-reception-uniform-dress.jpg",
-      cta_text: "Connect",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/retail/${"airflow-knit"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "White", hex: "#ffffff" },
           { name: "Black", hex: "#000000" },
+          { name: "Blue", hex: "#1e4b96" },
+          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#ff7f00" },
         ],
         sizes: [
-          { size: "XS", available: true },
-          { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹399",
+        startingPrice: "₹199",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Breathable", description: "High activity ready" },
@@ -377,8 +372,8 @@ export const retailStaffWearData: Collection = {
       title: "GraceWear Saree",
       description: "Traditional saree option with modern comfort for staff uniforms.",
       image: "/hotel-reception-uniform-dress.jpg",
-      cta_text: "Connect",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/retail/${"gracewear-saree"}`,
       productDetails: {
         colors: [
           { name: "Navy", hex: "#1e4b96" },
@@ -389,11 +384,11 @@ export const retailStaffWearData: Collection = {
           { size: "One Size", available: true },
           { size: "With Petticoat", available: true },
         ],
-        startingPrice: "₹799",
+        startingPrice: "₹299",
         bulkDiscountNote: "Bulk discounts available for larger quantities",
         addOnsNote: "Logo embroidery, name tags, custom printing (details can be provided after quote request)",
         features: [
-          { icon: "🚚", title: "Fast Delivery", description: "Across Tamil Nadu" },
+          { icon: "🚚", title: "Fast Delivery", description: "across India" },
           { icon: "✂️", title: "Custom Stitching", description: "Available" },
           { icon: "📦", title: "Bulk Friendly", description: "Special discounts" },
           { icon: "✨", title: "Traditional", description: "Modern comfort" },
@@ -404,30 +399,27 @@ export const retailStaffWearData: Collection = {
   final_cta_text: "Planning uniforms for your retail or staff team?",
   final_cta_subtext:
     "Let's discuss your brand colors, work environment, and comfort needs — we'll help you choose the right uniform solution.",
+  whatsapp_message: "Hello, I would like to inquire about retail and staff wear uniforms.",
 }
 
 export const sportsJerseyData: Collection = {
   id: "sports",
-  name: "Sports & Jersey Wear",
+  name: "Sports & Jersey Wears",
   intro:
-    "Durable, flexible uniforms made for active performance. TINKS specializes in sports uniforms and jersey wear designed to withstand intense activity while maintaining style and brand identity. Perfect for teams, schools, and sports organizations.",
-  categories: [
+    "TINKS Sports & Jersey Wear is designed for active performance, with each sports jersey supporting movement, sweat management, and regular use. Ideal for schools, colleges, academies, and teams, our team jersey designs focus on functionality and consistency, helping players stay comfortable, confident, and ready on the field.",
+    categories: [
     {
       id: "team-jerseys",
       title: "Team Jerseys",
       description: "Custom-designed jerseys for sports teams with durability and performance.",
       image: "/security-guard-uniform-shirt-pant.jpg",
-      cta_text: "Order Now",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/sports/${"team-jerseys"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "Red", hex: "#ff0000" },
-          { name: "Orange", hex: "#ff7f00" },
-          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#1e4b96" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
@@ -450,24 +442,20 @@ export const sportsJerseyData: Collection = {
       title: "Custom Sportswear",
       description: "Tailored sportswear solutions for athletes and sports organizations.",
       image: "/security-guard-uniform-shirt-pant.jpg",
-      cta_text: "Order Now",
-      cta_link: "/contact",
+      cta_text: "View Details",
+      cta_link: `/products/sports/${"custom-sportswear"}`,
       productDetails: {
         colors: [
-          { name: "Navy", hex: "#1e4b96" },
-          { name: "Red", hex: "#ff0000" },
-          { name: "Orange", hex: "#ff7f00" },
-          { name: "White", hex: "#ffffff" },
+          { name: "Custom", hex: "#1e4b96" },
         ],
         sizes: [
-          { size: "XS", available: true },
           { size: "S", available: true },
           { size: "M", available: true },
           { size: "L", available: true },
           { size: "XL", available: true },
           { size: "XXL", available: true },
         ],
-        startingPrice: "₹499",
+        startingPrice: "₹329",
         bulkDiscountNote: "Bulk discounts available for sports organizations",
         addOnsNote: "Team logo, custom designs, athlete names (fully customizable)",
         features: [
@@ -481,6 +469,7 @@ export const sportsJerseyData: Collection = {
   ],
   final_cta_text: "Ready for custom sports uniforms?",
   final_cta_subtext: "Get in touch to discuss your team's uniform requirements and specifications.",
+  whatsapp_message: "Hello, I would like to inquire about custom sports uniforms.",
 }
 
 export const allCollections = [schoolUniformsData, corporateWearData, retailStaffWearData, sportsJerseyData]

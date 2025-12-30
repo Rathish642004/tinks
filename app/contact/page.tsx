@@ -2,40 +2,64 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle } from "lucide-react"
+import { contactConfig, getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 export default function ContactPage() {
+  const searchParams = useSearchParams()
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    collections: "",
-    category: [] as string[],
-    quantity: "",
+    collections: searchParams.get("collections") || "",
+    category: searchParams.getAll("category").length > 0
+      ? searchParams.getAll("category")
+      : searchParams.get("category")
+        ? [searchParams.get("category")!]
+        : [],
+    quantity: searchParams.get("quantity") || "",
     budget: "",
     message: "",
   })
+
+  // If the user navigates to the page with query params, update formData accordingly (for client navigation)
+  useEffect(() => {
+    // If the Uniform Collections value is present, set it and update categories accordingly
+    const collectionsValue = searchParams.get("collections") || ""
+    const categoryValue = searchParams.getAll("category").length > 0
+      ? searchParams.getAll("category")
+      : searchParams.get("category")
+        ? [searchParams.get("category")!]
+        : []
+    setFormData((prev) => ({
+      ...prev,
+      collections: collectionsValue,
+      category: categoryValue,
+      quantity: searchParams.get("quantity") || prev.quantity,
+    }))
+  }, [searchParams])
 
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
   const customerTypes = [
     "School Uniforms",
-    "Corporate Wear",
-    "Retail & Staff Wear",
+    "Corporate Wears",
+    "Retail & Staff Wears",
     "Sports & jersey Wear"
   ]
   
   // Category options based on selected collection
   const categoryMapping: Record<string, string[]> = {
     "School Uniforms": ["Boys Uniform Set", "Girls Uniform Set", "Kindergarten Uniform Set"],
-    "Corporate Wear": ["Everyday Comfort Polo", "EasyCare Work Polo", "StretchFit Polo", "Premium Soft Polo"],
-    "Retail & Staff Wear": ["WorkComfort Polo", "AirFlow Knit T-Shirt ", "GraceWear Saree"],
+    "Corporate Wears": ["Everyday Comfort Polo", "EasyCare Work Polo", "StretchFit Polo", "Premium Soft Polo"],
+    "Retail & Staff Wears": ["WorkComfort Polo", "AirFlow Knit T-Shirt ", "GraceWear Saree"],
     "Sports & jersey Wear": ["Team Jerseys", "Custom Sportswear"]
   }
   
@@ -106,22 +130,25 @@ export default function ContactPage() {
           {/* Quick Contact Info */}
           <div className="lg:col-span-1 space-y-6">
             {/* Phone */}
-            <div className="bg-card rounded-lg p-6 border border-border hover:shadow-lg transition">
+            <a
+              href={`tel:${contactConfig.phone}`}
+              className="bg-card rounded-lg p-6 border border-border hover:shadow-lg transition block"
+            >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="text-accent" size={24} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary mb-2">Phone</h3>
-                  <p className="text-sm text-foreground/80 mb-1">+91 98765 43210</p>
+                  <p className="text-sm text-foreground/80 mb-1">{contactConfig.phone}</p>
                   <p className="text-xs text-foreground/60">Mon - Sat, 10 AM - 6 PM</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/919876543210"
+              href={getWhatsAppLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-card rounded-lg p-6 border border-border hover:shadow-lg transition block"
@@ -132,7 +159,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary mb-2">WhatsApp</h3>
-                  <p className="text-sm text-foreground/80 mb-1">+91 98765 43210</p>
+                  <p className="text-sm text-foreground/80 mb-1">{contactConfig.phone}</p>
                   <p className="text-xs text-accent hover:underline">Chat on WhatsApp</p>
                 </div>
               </div>
@@ -140,7 +167,7 @@ export default function ContactPage() {
 
             {/* Email */}
             <a
-              href="mailto:contact@tinks.com"
+              href={`mailto:${contactConfig.email}`}
               className="bg-card rounded-lg p-6 border border-border hover:shadow-lg transition block"
             >
               <div className="flex items-start gap-4">
@@ -149,7 +176,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary mb-2">Email</h3>
-                  <p className="text-sm text-foreground/80 mb-1">contact@tinks.com</p>
+                  <p className="text-sm text-foreground/80 mb-1">{contactConfig.email}</p>
                   <p className="text-xs text-accent hover:underline">Send us an email</p>
                 </div>
               </div>
@@ -163,10 +190,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-primary mb-2">Address</h3>
-                  <p className="text-sm text-foreground/80">Tamil Nadu, India</p>
-                  <p className="text-xs text-foreground/60 mt-2">
+                  <p className="text-sm text-foreground/80">{contactConfig.address}</p>
+                  {/* <p className="text-xs text-foreground/60 mt-2">
                     Serving: Chennai, Coimbatore, Madurai, Trichy, Salem + all Tamil Nadu
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -293,6 +320,9 @@ export default function ContactPage() {
                                 className="w-4 h-4 accent-primary"
                               />
                               <span className="text-sm text-foreground">{cat}</span>
+                              {formData.category.includes(cat) && (
+                                <span className="ml-2 text-xs text-primary font-semibold">(Selected)</span>
+                              )}
                             </label>
                           ))}
                         </div>

@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Tinks Clotting's Place | Premium Uniforms in Tamil Nadu",
   description:
-    "Premium uniforms & custom stitching for schools, corporate, medical, hospitality & industrial. Bulk orders, logo embroidery, on-time delivery across Tamil Nadu.",
+    "Premium uniforms & custom stitching for schools, corporate, medical, hospitality & industrial. Bulk orders, logo embroidery, on-time delivery across India.",
   keywords: "uniforms Tamil Nadu, school uniforms, corporate uniforms, medical scrubs, bulk orders, custom stitching",
   openGraph: {
     title: "Tinks Clotting's Place | Premium Uniforms in Tamil Nadu",

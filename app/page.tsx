@@ -6,11 +6,12 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { MessageCircle, Phone } from "lucide-react"
 import Link from "next/link"
+import { contactConfig, getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 export const metadata = {
   title: "Premium Uniforms & Custom Stitching in Tamil Nadu | Tinks",
   description:
-    "Get premium uniforms for schools, corporates, medical, hotels & industries. Bulk orders, custom logo embroidery, tailoring across Tamil Nadu.",
+    "Get premium uniforms for schools, corporates, medical, hotels & industries. Bulk orders, custom logo embroidery, tailoring across India.",
 }
 
 export default function Home() {
@@ -19,13 +20,13 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Slider */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="max-w-7xl mx-auto px-8 lg:px-8 py-8">
         <HeroSlider />
       </section>
 
       {/* Why TINKS Section */}
       <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4 text-balance">
               Why TINKS Is the Right Uniform Partner
@@ -46,7 +47,7 @@ export default function Home() {
               {
                 title: "Consistent Fit & Quality",
                 description: "Uniform sizing and stitching maintained across every order, every time.",
-                icon: "✓",
+                icon: "🧥",
               },
               {
                 title: "Bulk & Repeat Order Ready",
@@ -70,8 +71,8 @@ export default function Home() {
       </section>
 
       {/* Uniform Solutions by TINKS */}
-      <section className="py-16 lg:py-20 bg-secondary/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="uniform-solutions" className="py-16 lg:py-20 bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-8 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4 text-balance">
               Uniform Solutions by TINKS
@@ -84,36 +85,36 @@ export default function Home() {
               <CategoryCard
                 title="School Uniforms"
                 description="Smart, comfortable uniforms built for everyday school life."
-                image="/school-uniform-shirt-pant-set.jpg"
+                image="/school-front-1.png"
                 ctaText="Explore More"
-                ctaLink="/collections/school"
+                detailLink="/collections/school"
               />
             </Link>
             <Link href="/collections/corporate">
               <CategoryCard
                 title="Corporate Uniforms"
                 description="Professional uniforms that strengthen your brand identity."
-                image="/corporate-formal-shirt.jpg"
+                image="/Coparate-uniform-front-1.png"
                 ctaText="Explore More"
-                ctaLink="/collections/corporate"
+                detailLink="/collections/corporate"
               />
             </Link>
             <Link href="/collections/retail">
               <CategoryCard
-                title="Retail & Staff Wear"
+                title="Retail & Staff Wears"
                 description="Polished staff uniforms for confident customer interactions."
-                image="/hotel-reception-uniform-dress.jpg"
+                image="/Retail-front-1.png"
                 ctaText="Explore More"
-                ctaLink="/collections/retail"
+                detailLink="/collections/retail"
               />
             </Link>
             <Link href="/collections/sports">
               <CategoryCard
-                title="Sports & Jersey Wear"
+                title="Sports & Jersey Wears"
                 description="Durable, flexible uniforms made for active performance."
-                image="/security-guard-uniform-shirt-pant.jpg"
+                image="/sports-front-1.png"
                 ctaText="Explore More"
-                ctaLink="/collections/sports"
+                detailLink="/collections/sports"
               />
             </Link>
           </div>
@@ -122,7 +123,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <section className="py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-8 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4 text-balance">How It Works</h2>
             <p className="text-lg text-foreground/70">Simple steps from selection to delivery</p>
@@ -210,7 +211,7 @@ export default function Home() {
 
       {/* Final CTA Section */}
       <section className="py-16 lg:py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-8 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-balance">Let's Discuss Your Uniform Needs</h2>
           {/* <p className="text-lg text-primary-foreground/90 mb-8 text-balance">
             Get in touch with us today for quotes, bulk orders, or custom design consultations.
@@ -223,7 +224,7 @@ export default function Home() {
               </Button>
             </Link>
             <a
-              href="https://wa.me/919876543210?text=Hi! I'm interested in your uniforms."
+              href={getWhatsAppLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -232,7 +233,7 @@ export default function Home() {
                 Chat on WhatsApp
               </Button>
             </a>
-            <a href="tel:+919876543210">
+            <a href={`tel:${contactConfig.phone}`}>
               <Button variant="outline" className="w-full sm:w-auto px-8 py-6 text-base font-semibold bg-transparent">
                 <Phone className="mr-2" size={20} />
                 Call Us

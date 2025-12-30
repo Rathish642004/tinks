@@ -159,7 +159,7 @@ export default function AboutPage() {
 
             <div className="relative h-96 lg:h-full">
               <Image
-                src="/medical-scrubs-nurse-uniform.jpg"
+                src="/industrial-safety-coverall-uniform.jpg"
                 alt="Quality Uniforms"
                 fill
                 className="object-cover rounded-lg"
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 Get in Touch
               </Button>
             </Link>
-            <Link href="/collections">
+            <Link href="/#uniform-solutions">
               <Button variant="outline" className="px-8 py-6 text-base font-semibold bg-transparent w-full sm:w-auto">
                 View Collections
               </Button>

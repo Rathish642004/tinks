@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 interface Slide {
   title: string
@@ -19,21 +20,21 @@ const slides: Slide[] = [
     title: "Premium Uniforms That Last",
     description: "Perfect fit. Everyday comfort. Consistent quality.",
     cta_text: "Get Quote on WhatsApp",
-    cta_link: "https://wa.me/919876543210",
+    cta_link: getWhatsAppLink(whatsappMessages.hero),
     image: "/school-uniform-shirt-pant-set.jpg",
   },
   {
     title: "Uniform Solutions for Schools & Businesses",
     description: "School, corporate, retail & institutional uniforms.",
     cta_text: "Explore Uniform Options",
-    cta_link: "/collections/school",
+    cta_link: "/#uniform-solutions",
     image: "/corporate-formal-shirt.jpg",
   },
   {
     title: "Customized Uniforms That Represent Your Brand",
     description: "Colors, logos, and fits tailored to your identity.",
-    cta_text: "Get a Custom Quote",
-    cta_link: "/custom-uniforms",
+    cta_text: "Get Quote on WhatsApp",
+    cta_link: getWhatsAppLink(whatsappMessages.custom),
     image: "/chef-coat-apron-kitchen-uniform.jpg",
   },
 ]

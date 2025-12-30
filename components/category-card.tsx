@@ -8,7 +8,7 @@ interface CategoryCardProps {
   title: string
   description: string
   image: string
-  ctaText: string
+  ctaText: string,
   detailLink: string
 }
 
@@ -18,9 +18,9 @@ export function CategoryCard({ title, description, image, ctaText, detailLink }:
   return (
     <div
       onClick={() => router.push(detailLink)}
-      className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition group cursor-pointer h-full"
+      className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition group cursor-pointer h-full max-w-xs mx-auto md:max-w-none"
     >
-      <div className="relative h-64 bg-muted overflow-hidden">
+      <div className="relative h-80 sm:h-72 md:h-64 bg-muted overflow-hidden flex items-center justify-center">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}
@@ -34,7 +34,10 @@ export function CategoryCard({ title, description, image, ctaText, detailLink }:
           <p className="text-foreground/80 text-sm line-clamp-2">{description}</p>
         </div>
         <Button
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            router.push(detailLink);
+          }}
           className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
         >
           {ctaText}
