@@ -57,9 +57,9 @@ export function Navbar() {
               </div>
             </div>
 
-            {/* <Link href="/custom-uniforms" className="text-sm font-medium text-foreground hover:text-primary transition">
+            <Link href="/custom-uniforms" className="text-sm font-medium text-foreground hover:text-primary transition">
               Custom Uniforms
-            </Link> */}
+            </Link>
             <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition">
               About
             </Link>

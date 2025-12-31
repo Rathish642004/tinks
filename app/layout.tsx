@@ -8,16 +8,15 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Tinks Clotting's Place | Premium Uniforms in Tamil Nadu",
+  title: "TINKS Uniforms | Premium Uniforms for Schools & Businesses",
   description:
-    "Premium uniforms & custom stitching for schools, corporate, medical, hospitality & industrial. Bulk orders, logo embroidery, on-time delivery across India.",
+    "Reliable uniform partner for schools, corporate, retail, and sportswear. Quality-focused uniforms designed for daily use and consistent supply.",
   keywords: "uniforms Tamil Nadu, school uniforms, corporate uniforms, medical scrubs, bulk orders, custom stitching",
   openGraph: {
-    title: "Tinks Clotting's Place | Premium Uniforms in Tamil Nadu",
-    description: "Premium uniforms & custom stitching for schools, corporate, medical, hospitality & industrial",
+    title: "TINKS Uniforms | Premium Uniforms for Schools & Businesses",
+    description: "Reliable uniform partner for schools, corporate, retail, and sportswear. Quality-focused uniforms designed for daily use and consistent supply.",
     type: "website",
-  },
-    generator: 'v0.app'
+  }
 }
 
 export default function RootLayout({

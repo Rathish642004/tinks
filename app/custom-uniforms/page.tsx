@@ -206,7 +206,7 @@ export default function CustomUniformsPage() {
       </section>
 
       {/* Pricing & FAQ */}
-      <section className="py-16 lg:py-20 bg-secondary/30">
+      {/* <section className="py-16 lg:py-20 bg-secondary/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4 text-balance">Custom Uniform FAQ</h2>
@@ -242,7 +242,7 @@ export default function CustomUniformsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 lg:py-20 bg-primary text-primary-foreground">

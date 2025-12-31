@@ -18,9 +18,9 @@ export function CategoryCard({ title, description, image, ctaText, detailLink }:
   return (
     <div
       onClick={() => router.push(detailLink)}
-      className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition group cursor-pointer h-full max-w-xs mx-auto md:max-w-none"
+      className="bg-card rounded-lg overflow-hidden border border-border hover:shadow-lg transition group cursor-pointer h-full max-w-80 mx-auto md:max-w-80"
     >
-      <div className="relative h-80 sm:h-72 md:h-64 bg-muted overflow-hidden flex items-center justify-center">
+      <div className="relative h-100 sm:h-100 md:h-100 bg-muted overflow-hidden flex items-center justify-center">
         <Image
           src={image || "/placeholder.svg"}
           alt={title}

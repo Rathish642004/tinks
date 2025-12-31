@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
+import { useForm, ValidationError } from "@formspree/react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -13,6 +14,7 @@ import { contactConfig, getWhatsAppLink, whatsappMessages } from "@/lib/contact-
 
 export default function ContactPage() {
   const searchParams = useSearchParams()
+  const [state, handleFormspreeSubmit] = useForm("mgovwngq")
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -45,8 +47,24 @@ export default function ContactPage() {
     }))
   }, [searchParams])
 
-  const [submitted, setSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  // Reset form after successful submission
+  useEffect(() => {
+    if (state.succeeded) {
+      const timer = setTimeout(() => {
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          collections: "",
+          category: [],
+          quantity: "",
+          budget: "",
+          message: "",
+        })
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [state.succeeded])
 
   const customerTypes = [
     "School Uniforms",
@@ -74,30 +92,9 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsLoading(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setSubmitted(true)
-    setIsLoading(false)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        collections: "",
-        category: [],
-        quantity: "",
-        budget: "",
-        message: "",
-      })
-      setSubmitted(false)
-    }, 3000)
+    await handleFormspreeSubmit(e)
   }
 
   const handleCategoryChange = (cat: string) => {
@@ -204,7 +201,7 @@ export default function ContactPage() {
             <div className="bg-card rounded-lg border border-border p-8">
               <h2 className="text-2xl font-bold text-primary mb-6">Send us a Message</h2>
 
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="text-center py-12">
                   <CheckCircle className="text-primary mx-auto mb-4" size={48} />
                   <h3 className="text-xl font-bold text-primary mb-2">Thank You!</h3>
@@ -220,6 +217,7 @@ export default function ContactPage() {
                     <label className="block text-sm font-semibold text-foreground mb-2">Full Name *</label>
                     <input
                       type="text"
+                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -227,6 +225,7 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
                       placeholder="Your name"
                     />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm mt-1" />
                   </div>
 
                   {/* Phone and Email */}
@@ -235,6 +234,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-semibold text-foreground mb-2">Phone Number *</label>
                       <input
                         type="tel"
+                        id="phone"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
@@ -242,17 +242,20 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
                         placeholder="+91 9876543210"
                       />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-500 text-sm mt-1" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-foreground mb-2">Email (Optional)</label>
                       <input
                         type="email"
+                        id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
                         placeholder="your@email.com"
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1" />
                     </div>
                   </div>
 
@@ -307,9 +310,12 @@ export default function ContactPage() {
                             </label>
                           ))}
                         </div>
-                        {formData.category.length === 0 && (
-                          <input type="hidden" name="category" required />
-                        )}
+                        {/* Hidden input to submit selected categories to Formspree */}
+                        <input
+                          type="hidden"
+                          name="category"
+                          value={formData.category.join(", ")}
+                        />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-foreground mb-2">Approximate Quantity</label>
@@ -329,6 +335,7 @@ export default function ContactPage() {
                   <div>
                     <label className="block text-sm font-semibold text-foreground mb-2">Message *</label>
                     <textarea
+                      id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
@@ -337,6 +344,7 @@ export default function ContactPage() {
                       className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground resize-none"
                       placeholder="Tell us about your uniform requirements, custom requests, etc..."
                     />
+                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm mt-1" />
                   </div>
 
                   {/* Note about logo upload */}
@@ -349,10 +357,10 @@ export default function ContactPage() {
                   {/* Submit Button */}
                   <Button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={state.submitting}
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-base font-semibold disabled:opacity-50"
                   >
-                    {isLoading ? (
+                    {state.submitting ? (
                       <span className="flex items-center gap-2">
                         <span className="inline-block w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
                         Sending...

@@ -28,7 +28,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/security-guard-uniform-shirt-pant.jpg"
+                src="/about-1.jpg"
                 alt="TINKS Uniforms"
                 fill
                 className="object-cover rounded-lg"
@@ -159,7 +159,7 @@ export default function AboutPage() {
 
             <div className="relative h-96 lg:h-full">
               <Image
-                src="/industrial-safety-coverall-uniform.jpg"
+                src="/about-3.jpg"
                 alt="Quality Uniforms"
                 fill
                 className="object-cover rounded-lg"

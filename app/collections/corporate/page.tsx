@@ -18,7 +18,7 @@ export default function CorporateWearPage() {
       <Navbar />
 
       {/* Header */}
-      <section className="bg-primary text-primary-foreground py-12 lg:py-10">
+      <section className="bg-primary text-primary-foreground py-5 lg:py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-balance">{corporateWearData.name}</h1>
           <p className="text-lg text-primary-foreground/80 text-balance max-w-3xl">{corporateWearData.intro}</p>
@@ -26,7 +26,7 @@ export default function CorporateWearPage() {
       </section>
 
       {/* Categories Grid */}
-      <section className="py-12 lg:py-16 bg-secondary/30">
+      <section className="py-5 lg:py-5 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {corporateWearData.categories.map((category) => (

@@ -63,7 +63,7 @@ export const schoolUniformsData: Collection = {
       id: "boys-uniform",
       title: "Boys Uniform Set",
       description: "Comfortable house uniforms with durable stitching for daily school use.",
-      image: "/school-uniform-shirt-pant-set.jpg",
+      image: "/100017826.jpeg",
       cta_text: "View Details",
       cta_link: `/products/school/${"boys-uniform"}`,
       productDetails: {
@@ -93,7 +93,7 @@ export const schoolUniformsData: Collection = {
       id: "girls-uniform",
       title: "Girls Uniform Set",
       description: "Well-fitted house uniforms designed for comfort and movement.",
-      image: "/school-uniform-shirt-pant-set.jpg",
+      image: "/Girls-uniforms.jpeg",
       cta_text: "View Details",
       cta_link: `/products/school/${"girls-uniform"}`,
       productDetails: {
@@ -123,7 +123,7 @@ export const schoolUniformsData: Collection = {
       id: "kindergarten-uniform",
       title: "Kindergarten Uniform Set",
       description: "Soft, safe house uniforms suitable for young children.",
-      image: "/school-uniform-shirt-pant-set.jpg",
+      image: "/Kindergarten-uniform.jpeg",
       cta_text: "View Details",
       cta_link: `/products/school/${"kindergarten-uniform"}`,
       productDetails: {
@@ -167,7 +167,7 @@ export const corporateWearData: Collection = {
       id: "everyday-comfort",
       title: "Everyday Comfort Polo",
       description: "100% Cotton - Soft, breathable cotton designed for all-day comfort and regular use.",
-      image: "/corporate-formal-shirt.jpg",
+      image: "/Everyday-Comfort-Polo.jpeg",
       cta_text: "View Details",
       cta_link: `/products/corporate/${"everyday-comfort"}`,
       productDetails: {
@@ -199,7 +199,7 @@ export const corporateWearData: Collection = {
       id: "easycare-polo",
       title: "EasyCare Work Polo",
       description: "60% Cotton / 40% Polyester - Durable blend that’s easy to wash, quick to dry, and perfect for daily workwear.",
-      image: "/corporate-formal-shirt.jpg",
+      image: "/EasyCare-Work-Polo.jpeg",
       cta_text: "View Details",
       cta_link: `/products/corporate/${"easycare-polo"}`,
       productDetails: {
@@ -231,7 +231,7 @@ export const corporateWearData: Collection = {
       id: "stretchfit-polo",
       title: "StretchFit Polo",
       description: "95% Cotton / 5% Lycra - Flexible fabric with a comfortable stretch for a better fit and easy movement.",
-      image: "/corporate-formal-shirt.jpg",
+      image: "/StretchFit-Polo.jpeg",
       cta_text: "View Details",
       cta_link: `/products/corporate/${"stretchfit-polo"}`,
       productDetails: {
@@ -263,7 +263,7 @@ export const corporateWearData: Collection = {
       id: "premium-soft-polo",
       title: "Premium Soft Polo",
       description: "100% Bio-Washed Cotton - Smooth, premium-finish cotton that feels softer and looks refined all day..",
-      image: "/corporate-formal-shirt.jpg",
+      image: "/Premium-Soft-Polo.jpeg",
       cta_text: "View Details",
       cta_link: `/products/corporate/${"premium-soft-polo"}`,
       productDetails: {
@@ -308,7 +308,7 @@ export const retailStaffWearData: Collection = {
       id: "workcomfort-polo",
       title: "WorkComfort Polo",
       description: "Professional polo perfect for retail and hospitality staff.",
-      image: "/hotel-reception-uniform-dress.jpg",
+      image: "/WorkComfort-Polo.jpeg",
       cta_text: "View Details",
       cta_link: `/products/retail/${"workcomfort-polo"}`,
       productDetails: {
@@ -340,7 +340,7 @@ export const retailStaffWearData: Collection = {
       id: "airflow-knit",
       title: "AirFlow Knit T-Shirt",
       description: "Breathable knit fabric ideal for high-activity retail environments.",
-      image: "/hotel-reception-uniform-dress.jpg",
+      image: "/AirFlow-Knit-T-Shirt.jpg",
       cta_text: "View Details",
       cta_link: `/products/retail/${"airflow-knit"}`,
       productDetails: {
@@ -371,7 +371,7 @@ export const retailStaffWearData: Collection = {
       id: "gracewear-saree",
       title: "GraceWear Saree",
       description: "Traditional saree option with modern comfort for staff uniforms.",
-      image: "/hotel-reception-uniform-dress.jpg",
+      image: "/saree-1.png",
       cta_text: "View Details",
       cta_link: `/products/retail/${"gracewear-saree"}`,
       productDetails: {
@@ -412,7 +412,7 @@ export const sportsJerseyData: Collection = {
       id: "team-jerseys",
       title: "Team Jerseys",
       description: "Custom-designed jerseys for sports teams with durability and performance.",
-      image: "/security-guard-uniform-shirt-pant.jpg",
+      image: "/sport-1.png",
       cta_text: "View Details",
       cta_link: `/products/sports/${"team-jerseys"}`,
       productDetails: {
@@ -441,7 +441,7 @@ export const sportsJerseyData: Collection = {
       id: "custom-sportswear",
       title: "Custom Sportswear",
       description: "Tailored sportswear solutions for athletes and sports organizations.",
-      image: "/security-guard-uniform-shirt-pant.jpg",
+      image: "/sports-2.png",
       cta_text: "View Details",
       cta_link: `/products/sports/${"custom-sportswear"}`,
       productDetails: {

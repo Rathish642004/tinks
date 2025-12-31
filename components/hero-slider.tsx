@@ -21,21 +21,21 @@ const slides: Slide[] = [
     description: "Perfect fit. Everyday comfort. Consistent quality.",
     cta_text: "Get Quote on WhatsApp",
     cta_link: getWhatsAppLink(whatsappMessages.hero),
-    image: "/school-uniform-shirt-pant-set.jpg",
+    image: "/Home-slide-1.jpeg",
   },
   {
     title: "Uniform Solutions for Schools & Businesses",
     description: "School, corporate, retail & institutional uniforms.",
     cta_text: "Explore Uniform Options",
     cta_link: "/#uniform-solutions",
-    image: "/corporate-formal-shirt.jpg",
+    image: "/Home-slide-2.jpeg",
   },
   {
     title: "Customized Uniforms That Represent Your Brand",
     description: "Colors, logos, and fits tailored to your identity.",
     cta_text: "Get Quote on WhatsApp",
     cta_link: getWhatsAppLink(whatsappMessages.custom),
-    image: "/chef-coat-apron-kitchen-uniform.jpg",
+    image: "/Home-slide-3.jpg",
   },
 ]
 

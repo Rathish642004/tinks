@@ -64,15 +64,15 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
           {/* Product Image and Details Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Product Image - Left Side */}
-            <div className="flex flex-col gap-4">
-              <div className="relative w-full aspect-square bg-muted rounded-lg overflow-hidden">
-                <Image
-                  src={product.image || "/placeholder.svg"}
-                  alt={product.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
+            <div className="flex flex-col gap-4 items-center lg:items-center">
+              <div className="relative w-90 h-100 md:w-120 md:h-140 bg-muted rounded-lg overflow-hidden">
+          <Image
+            src={product.image || "/placeholder.svg"}
+            alt={product.title}
+            fill
+            className="object-cover"
+            priority
+          />
               </div>
             </div>
 
