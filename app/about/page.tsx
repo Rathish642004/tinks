@@ -7,8 +7,9 @@ import { Wind, Move, Shield, Target, RefreshCw, MessageSquare, Quote } from "luc
 import Link from "next/link"
 
 export const metadata = {
-  title: "About TINKS | Your Trusted Uniform Partner",
-  description: "Learn about TINKS – uniforms designed for comfort, fit, and durability. Your long-term uniform partner for schools, businesses, and brands.",
+  title: "About – TINKS Uniforms",
+  description: "Learn about TINKS Uniforms, a reliable uniform partner focused on quality, consistency, and long-term supply for schools and businesses.",
+  keywords: "uniform partner"
 }
 
 export default function AboutPage() {

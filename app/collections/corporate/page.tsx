@@ -8,8 +8,9 @@ import Link from "next/link"
 import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
-  title: "Corporate Wears | Tinks",
-  description: "Professional corporate uniforms and work wear.",
+  title: "Corporate Uniforms for Offices & Teams | TINKS",
+  description: "Corporate uniforms designed for offices and professional teams. Polo t-shirts and workwear uniforms with a polished, professional finish.",
+  keywords: "corporate uniform , company uniforms"
 }
 
 export default function CorporateWearPage() {

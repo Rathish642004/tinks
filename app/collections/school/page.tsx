@@ -8,8 +8,9 @@ import Link from "next/link"
 import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
-  title: "School Uniforms | Tinks",
-  description: "High-quality school uniforms for boys, girls, and kindergarten students.",
+  title: "Best School House Uniforms Manufacturer | TINKS",
+  description: "Best school house uniforms including T-shirts, track pants, and activewear. Reliable bulk supply with consistent quality for schools by TINKS.",
+  keywords: "school house uniforms , school sports uniforms"
 }
 
 export default function SchoolUniformsPage() {

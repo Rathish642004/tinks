@@ -9,9 +9,10 @@ import Link from "next/link"
 import { contactConfig, getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 
 export const metadata = {
-  title: "Premium Uniforms & Custom Stitching in Tamil Nadu | Tinks",
+  title: "TINKS Uniforms | Premium Uniforms for Schools & Businesses",
   description:
-    "Get premium uniforms for schools, corporates, medical, hotels & industries. Bulk orders, custom logo embroidery, tailoring across India.",
+    "Reliable uniform partner for schools, corporates, retail, and sportswear. Quality-focused uniforms designed for daily use and consistent supply.",
+  keywords: "school uniforms , corporate t shirts",
 }
 
 export default function Home() {

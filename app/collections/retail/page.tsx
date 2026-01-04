@@ -8,8 +8,9 @@ import Link from "next/link"
 import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
-  title: "Retail & Staff Wears | Tinks",
-  description: "Professional retail and staff uniforms for hospitality and retail businesses.",
+  title: "Staff Uniforms for Retail & Shop Teams | TINKS",
+  description: "Staff uniforms and shop uniforms designed for retail teams and customer-facing roles.",
+  keywords: "staff uniforms , shop uniforms"
 }
 
 export default function RetailStaffWearPage() {
