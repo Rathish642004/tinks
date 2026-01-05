@@ -17,7 +17,8 @@ export function Footer() {
                 fill
                 sizes="112px"
                 className="object-contain object-left"
-                priority
+                loading="lazy"
+                quality={85}
               />
             </div>
           </Link>
@@ -38,7 +39,8 @@ export function Footer() {
                   fill
                   sizes="192px"
                   className="object-contain object-left"
-                  priority
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
             </Link>

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -28,24 +29,29 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#1e3a8a" />
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCBCHHZCYQ"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-SCBCHHZCYQ');
-            `,
-          }}
-        />
+        {/* Preconnect to important origins */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body className={`font-sans antialiased`}>
         <main>
           {children}
         </main>
         <Analytics />
+        
+        {/* Google Analytics - loaded after page is interactive */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SCBCHHZCYQ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SCBCHHZCYQ');
+          `}
+        </Script>
       </body>
     </html>
   )

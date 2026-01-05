@@ -68,6 +68,9 @@ export function HeroSlider() {
         fill
         className="object-cover"
         priority
+        fetchPriority="high"
+        sizes="100vw"
+        quality={85}
       />
 
       {/* Overlay */}
@@ -78,7 +81,7 @@ export function HeroSlider() {
         <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">{currentSlideData.title}</h1>
         <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-2xl text-balance">{currentSlideData.description}</p>
         <Link href={currentSlideData.cta_link}>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base font-semibold">
+          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-base font-semibold min-h-[44px]">
             {currentSlideData.cta_text}
           </Button>
         </Link>

@@ -26,6 +26,9 @@ export function CategoryCard({ title, description, image, ctaText, detailLink }:
           alt={title}
           fill
           className="object-cover group-hover:scale-105 transition"
+          sizes="(max-width: 768px) 320px, 320px"
+          quality={85}
+          loading="lazy"
         />
       </div>
       <div className="p-6 space-y-4">
@@ -38,7 +41,7 @@ export function CategoryCard({ title, description, image, ctaText, detailLink }:
             e.stopPropagation();
             router.push(detailLink);
           }}
-          className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
+          className="w-full bg-accent text-accent-foreground hover:bg-accent/90 min-h-[44px]"
         >
           {ctaText}
         </Button>
