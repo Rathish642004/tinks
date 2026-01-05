@@ -42,7 +42,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans antialiased`}>
-        {children}
+        <main>
+          {children}
+        </main>
         <Analytics />
       </body>
     </html>

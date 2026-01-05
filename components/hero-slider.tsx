@@ -107,9 +107,12 @@ export function HeroSlider() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition ${index === currentSlide ? "bg-white" : "bg-white/50"}`}
+            className="w-10 h-10 rounded-full transition flex items-center justify-center"
             aria-label={`Go to slide ${index + 1}`}
-          />
+            aria-current={index === currentSlide ? "true" : "false"}
+          >
+            <span className={`w-3 h-3 rounded-full transition ${index === currentSlide ? "bg-white" : "bg-white/50"}`} />
+          </button>
         ))}
       </div>
     </section>

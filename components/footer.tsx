@@ -49,30 +49,30 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Quick Links</h4>
+            <h3 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Quick Links</h3>
             <ul className="space-y-1 md:space-y-2 text-[10px] md:text-sm">
               <li>
-                <Link href="/" className="hover:text-accent transition">
+                <Link href="/" className="hover:text-accent transition inline-block py-1">
                   Home
                 </Link>
               </li>
               <li>
                 <Link
                   href="/#uniform-solutions"
-                  className="hover:text-accent transition"
+                  className="hover:text-accent transition inline-block py-1"
                 >
                   Collections
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-accent transition">
+                <Link href="/about" className="hover:text-accent transition inline-block py-1">
                   About
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-accent transition"
+                  className="hover:text-accent transition inline-block py-1"
                 >
                   Contact
                 </Link>
@@ -82,7 +82,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Services</h4>
+            <h3 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Services</h3>
             <ul className="space-y-1 md:space-y-2 text-[10px] md:text-sm">
               <li>Custom Stitching</li>
               <li>Logo Embroidery</li>
@@ -93,7 +93,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Contact</h4>
+            <h3 className="font-semibold text-xs md:text-base mb-2 md:mb-4">Contact</h3>
             <ul className="space-y-1 md:space-y-3 text-[10px] md:text-sm">
               <li className="flex items-start gap-1 md:gap-2">
                 <MapPin size={12} className="mt-0.5 flex-shrink-0 md:w-4 md:h-4" />
@@ -101,13 +101,13 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-1 md:gap-2">
                 <Phone size={12} className="mt-0.5 flex-shrink-0 md:w-4 md:h-4" />
-                <a href={`tel:${contactConfig.phone}`} className="hover:text-accent transition">
+                <a href={`tel:${contactConfig.phone}`} className="hover:text-accent transition inline-block py-1">
                   {contactConfig.phone}
                 </a>
               </li>
               <li className="flex items-start gap-1 md:gap-2">
                 <Mail size={12} className="mt-0.5 flex-shrink-0 md:w-4 md:h-4" />
-                <a href={`mailto:${contactConfig.email}`} className="hover:text-accent transition">
+                <a href={`mailto:${contactConfig.email}`} className="hover:text-accent transition inline-block py-1">
                   {contactConfig.email}
                 </a>
               </li>
