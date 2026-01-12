@@ -17,7 +17,11 @@ export const metadata: Metadata = {
     title: "TINKS Uniforms | Premium Uniforms for Schools & Businesses",
     description: "Reliable uniform partner for schools, corporate, retail, and sportswear. Quality-focused uniforms designed for daily use and consistent supply.",
     type: "website",
-  }
+  },
+  metadataBase: new URL("https://www.tinksuniforms.in"),
+  alternates: {
+    canonical: "https://www.tinksuniforms.in",
+  },
 }
 
 export default function RootLayout({
