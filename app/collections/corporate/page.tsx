@@ -9,8 +9,8 @@ import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
   title: "Corporate Uniforms for Offices & Teams | TINKS",
-  description: "Corporate uniforms designed for offices and professional teams. Polo t-shirts and workwear uniforms with a polished, professional finish.",
-  keywords: "corporate uniform , company uniforms"
+  description: "Professional corporate uniforms designed for offices and teams. High-quality polo t-shirts, formal shirts, and workwear with custom branding.",
+  keywords: "corporate uniforms, company t-shirts, office staff uniforms, custom embroidered polos, corporate workwear, branded uniforms"
 }
 
 export default function CorporateWearPage() {

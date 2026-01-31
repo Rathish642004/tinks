@@ -12,7 +12,10 @@ export const metadata = {
   title: "TINKS Uniforms | Premium Uniforms for Schools & Businesses",
   description:
     "Reliable uniform partner for schools, corporates, retail, and sportswear. Quality-focused uniforms designed for daily use and consistent supply.",
-  keywords: "school uniforms , corporate t shirts",
+  keywords: "school uniforms, corporate t-shirts, medical scrubs, industrial workwear, retail staff uniforms, custom embroidery, bulk uniform supplier, Tirupur, Chennai",
+  openGraph: {
+    images: ["/icon.png"], // Confirm this or use a hero image if available
+  },
 }
 
 export default function Home() {

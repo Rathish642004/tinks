@@ -9,8 +9,8 @@ import { getWhatsAppLink } from "@/lib/contact-config"
 
 export const metadata = {
   title: "Staff Uniforms for Retail & Shop Teams | TINKS",
-  description: "Staff uniforms and shop uniforms designed for retail teams and customer-facing roles.",
-  keywords: "staff uniforms , shop uniforms"
+  description: "Stylish and durable staff uniforms for retail stores, supermarkets, and customer-facing roles. Enhance your brand image with professional attire.",
+  keywords: "retail staff uniforms, shop assistant uniforms, supermarket uniforms, store employee clothing, custom retail workwear, branded staff t-shirts"
 }
 
 export default function RetailStaffWearPage() {

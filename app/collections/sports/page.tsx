@@ -7,9 +7,9 @@ import { sportsJerseyData } from "@/lib/collections-data"
 import Link from "next/link"
 import { getWhatsAppLink, whatsappMessages } from "@/lib/contact-config"
 export const metadata = {
-  title: "Best Sports Jersey Manufacturer | Custom Sports Jerseys",
-  description: "Premium sports jerseys designed for comfort, durability, and performance. Custom sports jerseys for schools, clubs, and professional teams.",
-  keywords: "sports jersey , custom team jersey"
+  title: "Best Sports Jersey Manufacturer | Custom Sports Jerseys | TINKS",
+  description: "Premium sports jerseys designed for comfort, durability, and performance. Custom sports jerseys for schools, clubs, and professional teams across Tamil Nadu.",
+  keywords: "sports jerseys, custom team jerseys, cricket uniforms, football kits, volleyball jerseys, athletic wear manufacturer, sports uniform supplier"
 }
 
 export default function SportsJerseyWearPage() {
