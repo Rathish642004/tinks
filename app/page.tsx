@@ -138,7 +138,7 @@ export default function Home() {
               { step: 1, title: "Choose", description: "Select from our collection or customize your uniform." },
               { step: 2, title: "Confirm", description: "Finalize sizes, colors, logo, and quantity." },
               { step: 3, title: "Craft", description: "Stitching and printing done with precision and care." },
-              { step: 4, title: "Deliver", description: "Uniforms delivered on time, ready to wear." },
+              { step: 4, title: "Deliver", description: "Uniforms delivered on time, ready to wear comfort Uniforms." },
             ].map((item) => (
               <div key={item.step} className="relative">
                 <div className="bg-card p-6 rounded-lg text-center h-full border border-border">
